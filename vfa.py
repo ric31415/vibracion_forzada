@@ -14,6 +14,8 @@ st.set_page_config(
 st.title("Vibracion forzada con carga armonica")
 
 # Datos Generales
+
+st.sidebar.title("INGRESE DATOS")
 g = st.sidebar.number_input("Gravedad (g) en cm/s2", min_value=0.0, max_value=2000.0, value=981.0, step=0.1)
 t1 = st.sidebar.number_input("Tiempo del sismo en segundos", min_value=0.0, max_value=100.0, value=20.0, step=0.1)
 t2 = st.sidebar.number_input("Tiempo a evaluar en segundos", min_value=0.0, max_value=100.0, value=25.0, step=0.1)
