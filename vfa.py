@@ -36,13 +36,11 @@ u0 = st.sidebar.number_input("Desplazamiento Inicial (u0)", min_value=-10.0, max
 v0 = st.sidebar.number_input("Velocidad Inicial (v0)", min_value=-10.0, max_value=10.0, value=0.0, step=0.1)
 
 # Datos de la Sección
-b = st.sidebar.number_input("Ancho de la Sección (b) en cm", min_value=0.0, max_value=100.0, value=42.0, step=0.1)
-h = st.sidebar.number_input("Altura de la Sección (h) en cm", min_value=0.0, max_value=100.0, value=42.0, step=0.1)
-
+b = st.sidebar.number_input("Ancho de la Sección (b) en cm", min_value=0.0, max_value=100.0, value=30.0, step=0.1)
+h = st.sidebar.number_input("Altura de la Sección (h) en cm", min_value=0.0, max_value=100.0, value=30.0, step=0.1)
 
 xhi = sp.nsimplify(0.2)
 I = 1/12*b*h**3 # cm3
-
 
 # Calculo de la rigidez
 k = 12*E*I/altura**3
@@ -52,8 +50,6 @@ k = 2*k
 wn = round(sp.sqrt(k*g/W), 2)
 wd = round(wn*sp.sqrt(1 - xhi**2), 2)
 w = round(0.5*wn, 2)
-
-
 
 # Ecuacion de respuesta en la Fase 1
 
@@ -86,8 +82,6 @@ v22 = sp.diff(u22, t)
 u = sp.Piecewise((u1, t <= t1), (u22, t > t1))
 v = sp.Piecewise((v1, t <= t1), (v22, t > t1))
 
-
-
 # Mostrar entradas
 st.write(f""" Calculos Previos
 
@@ -109,9 +103,6 @@ C = {C:.2f} cm
 
 D = {D:.2f} cm
 """)
-
-
-
 
 # Ecuaciones
 st.write("Ecuacion de desplazamiento en la fase 1")
