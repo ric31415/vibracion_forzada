@@ -19,7 +19,7 @@ st.sidebar.title("INGRESE DATOS")
 g = st.sidebar.number_input("Gravedad (g) en cm/s2", min_value=0.0, max_value=2000.0, value=981.0, step=0.1)
 t1 = st.sidebar.number_input("Tiempo del sismo en segundos", min_value=0.0, max_value=100.0, value=20.0, step=0.1)
 t2 = st.sidebar.number_input("Tiempo a evaluar en segundos", min_value=0.0, max_value=100.0, value=25.0, step=0.1)
-t3 = st.sidebar.number_input("Puntos a evaluar", min_value=0.0, max_value=5000, value=1000, step=1)
+t3 = st.sidebar.number_input("Puntos a evaluar", min_value=0, max_value=5000, value=1000, step=1)
 # Datos del Material
 def_max = st.sidebar.number_input("Deformación Máxima (def_max) en cm", min_value=0.0, max_value=10.0, value=0.65, step=0.01)
 fc = st.sidebar.number_input("Resistencia a Compresión (fc) en kgf/cm2", min_value=0.0, max_value=500.0, value=210.0, step=1.0)
